@@ -1,5 +1,8 @@
 import { useState } from "react";
 import PokeCard from "./components/poke";
+import {Container, Box, HeaderTitle, SearchBox, SearchInput} from "./utils/styledhelper"
+
+
 
 interface IPokemon {
   name: string;
@@ -31,11 +34,14 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <div className="flex flex-col justify-center items-center">
+    <Container>
+      <HeaderTitle>
         <b>{process.env.REACT_APP_TITLE}</b>
-        <div>
-          <button className="px-4 py-3 text-white bg-blue-500 hover:bg-blue-400" onClick={() => getPokemon()}>
+        <Box>
+          <button
+            className="px-4 py-3 text-white bg-blue-500 hover:bg-blue-400"
+            onClick={() => getPokemon()}
+          >
             Get List
           </button>
           <button
@@ -47,17 +53,16 @@ const App = () => {
           >
             Clean List
           </button>
-        </div>
-      </div>
+        </Box>
+      </HeaderTitle>
 
-      <div>
-        <div className="p-4 relative mx-auto text-gray-600 flex justify-center">
-          <input
-            className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+      <Box>
+        <SearchBox>
+          <SearchInput
             placeholder="Search..."
             onChange={handleChange}
           />
-        </div>
+        </SearchBox>
         <div className="grid grid-cols-4 gap-4 px-4">
           {loading
             ? "Loading"
@@ -75,8 +80,8 @@ const App = () => {
               ))
             : null}
         </div>
-      </div>
-    </div>
+      </Box>
+    </Container>
   );
 };
 
