@@ -12,7 +12,7 @@ type IProps = {
 
 const PokeCard = ({ pokemon }: IProps) => {
   return (
-    <>
+    <div>
       {pokemon != null ? (
         <Card className="flex justify-center">
           <a
@@ -31,7 +31,7 @@ const PokeCard = ({ pokemon }: IProps) => {
           </a>
         </Card>
       ) : null}
-    </>
+    </div>
   );
 };
 

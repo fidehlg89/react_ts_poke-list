@@ -2,8 +2,6 @@ import { useState } from "react";
 import PokeCard from "./components/poke";
 import {Container, Box, HeaderTitle, SearchBox, SearchInput} from "./utils/styledhelper"
 
-
-
 interface IPokemon {
   name: string;
 }
