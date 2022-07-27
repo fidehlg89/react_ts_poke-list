@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Container,
   Box,
@@ -28,14 +28,14 @@ const PokeContainer = () => {
       });
   }, []);
 
-  const cleanList = () => {
+  const cleanList = useCallback(() => {
     setSearch("");
     setText("");
-  };
+  }, []);
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setSearch(text);
-  };
+  }, [text]);
 
   const filteredPokes = useMemo(
     () =>
